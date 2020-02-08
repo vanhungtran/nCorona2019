@@ -1,4 +1,5 @@
-# 
+
+# This analysis was developed basing on the post at #https://www.reddit.com/r/dataisbeautiful/comments/f0mj7s/coronavirus_case_updated_update_and_forecasts_oc/
 
 
 library(propagate)
