@@ -1,12 +1,11 @@
-
-# This analysis was developed basing on the post at #https://www.reddit.com/r/dataisbeautiful/comments/f0mj7s/coronavirus_case_updated_update_and_forecasts_oc/
+# 
 
 
 library(propagate)
 
 par(family="serif")
 
-Y <- c(4,326, 579, 844,1312,2015,2801,4579,6061,7816,9821,11948,14551,17387,20626,24553,28276,31439,34878,34956)
+Y <- c(4,326, 579, 844,1312,2015,2801,4579,6061,7816,9821,11948,14551,17387,20626,24553,28276,31439,34878,37552,40553)
 
 n <- as.numeric(length(Y))
 
@@ -125,7 +124,7 @@ C4 <-c(PREP4[1,1],PREP4[2,1],PREP4[3,1])
        
        col="navy", lwd=2, axes=F,
        
-       main = "2019 nCov confirmed cases (updated 2/08 at 19h (Beijing time))",
+       main = "2019 nCov confirmed cases (updated 2/10 at 19h (Beijing time))",
        
        #     
        #     
@@ -145,7 +144,7 @@ C4 <-c(PREP4[1,1],PREP4[2,1],PREP4[3,1])
   
   axis(2)
   
-  axis(1, at=c(1, n, n+1, n+3), lab=c("1/20", "2/08","2/09", "2/11"))
+  axis(1, at=c(1, n, n+1, n+3), lab=c("1/20", "2/10","2/11", "2/13"))
   
   
   
@@ -154,7 +153,7 @@ C4 <-c(PREP4[1,1],PREP4[2,1],PREP4[3,1])
   
   
   
-  text(14, 32000, "34,956 total cases at 7pm (Beijing time)")
+  text(14, 32000, "40,553 total cases at 7pm (Beijing time)")
   
   
   
@@ -165,7 +164,7 @@ C4 <-c(PREP4[1,1],PREP4[2,1],PREP4[3,1])
   
   
   
-  legend(1, 60000, legend=c("Exponential (BIC = 342.6348)"),
+  legend(1, 60000, legend=c("Exponential (BIC = 394.6615)"),
          
          col=c("red"), lty=2)
   
@@ -174,7 +173,7 @@ C4 <-c(PREP4[1,1],PREP4[2,1],PREP4[3,1])
   lines(seq(1:n), predict(mod2, list(x = seq(1:n))), lty=2, lwd=2,col='green')
   
   
-  legend(1, 60000, legend=c("Exponential (BIC = 342.6348)", "Logistic (BIC =  292.8836)"),
+  legend(1, 60000, legend=c("Exponential (BIC = 394.6615)", "Logistic (BIC =  324.2805)"),
          
          col=c("red", "green"), lty=2)
   
@@ -186,11 +185,20 @@ C4 <-c(PREP4[1,1],PREP4[2,1],PREP4[3,1])
   
   
   
-  legend(1, 60000, legend=c("Exponential (BIC = 342.6348)", "Logistic (BIC =  292.8836)" ,"Gompertz (BIC = 272.4123)"),
+  legend(1, 60000, legend=c("Exponential (BIC = 394.6615)", "Logistic (BIC =  324.2805)" ,"Gompertz (BIC = 313.8026)"),
          
          col=c("red", "green","black"), lty=2)
   
   text(3, 45000, "smaller is better fit")
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -202,11 +210,13 @@ C4 <-c(PREP4[1,1],PREP4[2,1],PREP4[3,1])
   lines(seq(1:n), predict(lin_mod, list(x = seq(1:n))), lty=2, lwd=2,col='blue')
   
   
-  legend(1, 60000, legend=c("Exponential (BIC = 342.6348)", "Logistic (BIC =  292.8836)" ,"Gompertz (BIC = 272.4123)","Polynomial 2 linear regression  (BIC =  283.9546)"),
+  legend(1, 60000, legend=c("Exponential (BIC = 394.6615)", "Logistic (BIC =  324.2805)" ,"Gompertz (BIC = 313.8026)","Polynomial 2 linear regression  (BIC =  337.6267)"),
          
          col=c("red", "green","black","blue"), lty=2)
   
   text(3, 45000, "smaller is better fit")
+  
+  
   
   
   
