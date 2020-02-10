@@ -4,3 +4,7 @@
 
 
 ![alt text](https://github.com/vanhungtran/nCorona2019/blob/master/Best%20models%20for%20nCon2019.gif)> 
+
+
+- Feb 10th 2020
+![alt text](https://github.com/vanhungtran/nCorona2019/blob/master/2020FEB.png)
